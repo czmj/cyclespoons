@@ -1,0 +1,15 @@
+<% @pubs.each do |pub| %>
+<h2><%= pub['name'] %></h2>
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    <% pub.each do |key, val| %>
+        <tr>
+            <td><%= key %></td>
+            <td><%= val %></td>
+        </tr>
+    <% end %>
+</table>
+<% end %>
