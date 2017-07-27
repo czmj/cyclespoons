@@ -6,6 +6,13 @@ GIT
     leaflet-rails (1.1.0)
       rails (>= 4.2.0)
 
+GIT
+  remote: https://github.com/kendrikat/leaflet-geosearch-rails.git
+  revision: e2b564fb5ce6eb867e5549c6c939c30b49c945d4
+  branch: master
+  specs:
+    leaflet-geosearch-rails (0.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,6 +177,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
+  leaflet-geosearch-rails!
   leaflet-rails!
   listen (~> 3.0.5)
   pg
