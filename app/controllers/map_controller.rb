@@ -1,6 +1,7 @@
 class MapController < ApplicationController
     def index
         @pubs = get_pubs
+        @markers = get_markers
     end
 
     private
@@ -37,5 +38,18 @@ class MapController < ApplicationController
         end
         
         return pubs;
+    end
+
+    def get_markers
+        markers = Array.new
+        pubs = @pubs || get_pubs
+
+        pubs.each do |pub|
+            markers.push({
+                :latlng => [pub['lat'], pub['lng']],
+                :popup => "<p><a href='//www.jdwetherspoon.com#{pub['url']}'>#{pub['name']}</a></p><p>#{pub['address1']}<br>#{pub['city']}<br>#{pub['postcode']}</p>"
+            })
+        end
+        return markers
     end
 end

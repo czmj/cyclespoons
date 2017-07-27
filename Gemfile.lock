@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/axyjo/leaflet-rails.git
+  revision: 107e95b8ab88372cb5d7958eae1cea49a250c780
+  branch: master
+  specs:
+    leaflet-rails (1.1.0)
+      rails (>= 4.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -162,6 +170,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
+  leaflet-rails!
   listen (~> 3.0.5)
   puma (~> 3.0)
   rails (~> 5.0.4)
