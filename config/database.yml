@@ -5,6 +5,7 @@ default: &default
   encoding: utf8
   reconnect: false
   username: postgres
+  password: secret
 
 test:
   <<: *default
