@@ -1,0 +1,11 @@
+{
+  "name": "cyclespoons",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:czmj/cyclespoons.git",
+  "author": "czmj <clarazmjordan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "leaflet-geosearch": "^2.5.1"
+  }
+}

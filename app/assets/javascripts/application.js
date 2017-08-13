@@ -1,5 +1,4 @@
-//= require leaflet.geosearch
-//= require leaflet.geosearch.provider.openstreetmap
+//= require leaflet-geosearch/dist/bundle.js
 
 //= require_self
 //= require_tree ./application

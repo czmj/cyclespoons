@@ -13,5 +13,5 @@
  *= require_tree .
  *= require_self
  *= require leaflet
- *= require leaflet.geosearch
+ *= require leaflet-geosearch/dist/style.css
  */
