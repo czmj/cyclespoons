@@ -16,7 +16,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 
 gem 'leaflet-rails', :git=>'https://github.com/axyjo/leaflet-rails.git', :branch=>'master'
-gem 'leaflet-geosearch-rails', :git=>'https://github.com/kendrikat/leaflet-geosearch-rails.git', :branch=>'master'
+gem 'leaflet-geosearch-rails', :git=>'https://github.com/czmj/leaflet-geosearch-rails.git', :branch=>'master'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

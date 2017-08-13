@@ -1,7 +1,5 @@
-var provider = new L.GeoSearch.Provider.OpenStreetMap();
-
-var searchControl = new L.Control.GeoSearch({
-  provider: provider
-});
-
-map.addControl(searchControl);
+new L.Control.GeoSearch({
+  provider: new L.GeoSearch.Provider.OpenStreetMap(),
+  showMarker: false,
+  position: 'topleft'
+}).addTo(map);

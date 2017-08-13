@@ -7,8 +7,8 @@ GIT
       rails (>= 4.2.0)
 
 GIT
-  remote: https://github.com/kendrikat/leaflet-geosearch-rails.git
-  revision: e2b564fb5ce6eb867e5549c6c939c30b49c945d4
+  remote: https://github.com/czmj/leaflet-geosearch-rails.git
+  revision: 2ca84882f6871eb465cfe2ff665ca63ad577892b
   branch: master
   specs:
     leaflet-geosearch-rails (0.4.0)
