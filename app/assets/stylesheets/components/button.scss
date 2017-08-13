@@ -1,0 +1,17 @@
+.btn {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    cursor: pointer;
+    background: none center/cover no-repeat;
+
+}
+
+.btn--strava {
+    background-image: url("/assets/strava-square.png");
+}
+
+.btn--github {
+    background-image: url("/assets/github.png");
+}

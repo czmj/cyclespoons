@@ -1,1 +1,0 @@
-// add blank js file to fix heroku error - remove if additional head scripts are used

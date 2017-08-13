@@ -1,6 +1,9 @@
 new L.Control.GeoSearch({
   provider: new L.GeoSearch.Provider.OpenStreetMap(),
   showMarker: false,
-  position: 'topleft',
+  position: 'topright',
   retainZoomLevel: true
 }).addTo(map);
+
+new L.Control.Strava({}).addTo(map);
+new L.Control.GitHub({}).addTo(map);
