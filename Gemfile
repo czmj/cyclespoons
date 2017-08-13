@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.0.4'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -16,6 +16,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 
 gem 'leaflet-rails', :git=>'https://github.com/axyjo/leaflet-rails.git', :branch=>'master'
+gem 'leaflet-geosearch-rails', :git=>'https://github.com/kendrikat/leaflet-geosearch-rails.git', :branch=>'master'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
