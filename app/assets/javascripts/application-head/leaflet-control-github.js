@@ -10,7 +10,14 @@ options: {
   onAdd: function (map) {
     // happens after added to map
     var container = L.DomUtil.create('div', 'leaflet-control-github');
-    var button = L.DomUtil.create('a', 'btn btn--github', container).setAttribute('href', 'https://github.com/czmj/cyclespoons');
+    var $github = $('.map__control--github');
+    if ($github.length){
+      $github.remove();
+      $(container).append($github);
+    }
+    else {
+      L.DomUtil.create('a', 'btn btn--github', container).setAttribute('href', 'https://github.com/czmj/cyclespoons');
+    }
     return container;
   },
   onRemove: function (map) {

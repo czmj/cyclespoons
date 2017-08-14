@@ -10,7 +10,14 @@ options: {
   onAdd: function (map) {
     // happens after added to map
     var container = L.DomUtil.create('div', 'leaflet-control-strava');
-    var button = L.DomUtil.create('button', 'btn btn--strava', container);
+    var $strava = $('.map__control--strava');
+    if ($strava.length){
+      $strava.remove();
+      $(container).append($strava);
+    }
+    else {
+      L.DomUtil.create('a', 'btn btn--strava', container).setAttribute('href', 'https://www.strava.com/oauth/authorize?client_id=19372&response_type=code&redirect_uri=http://cyclespoons.herokuapp.com');
+    }
     return container;
   },
   onRemove: function (map) {
