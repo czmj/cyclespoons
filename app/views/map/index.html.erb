@@ -4,7 +4,6 @@
   },
   :markers => @markers
 )%>
-
 <div class="map__controls">
   <div class="map__control map__control--github">
     <%= link_to 'https://github.com/czmj/cyclespoons', :title => 'View on GitHub', :class => 'btn btn--github' do %>
@@ -12,7 +11,7 @@
     <% end %>
   </div>
   <div class="map__control map__control--strava">
-    <%= link_to "https://www.strava.com/oauth/authorize?client_id=#{ENV['STRAVA_CLIENT_ID']}&response_type=code&redirect_uri=#{request.protocol + request.host_with_port}", :title => 'Connect to Strava', :class => 'btn btn--strava' do %>
+    <%= link_to "https://www.strava.com/oauth/authorize?client_id=#{ENV['STRAVA_CLIENT_ID']}&response_type=code&redirect_uri=#{request.protocol + request.host_with_port}", :title => 'Connect to Strava', :class => 'btn btn--strava', :data => {:routes => @encodedRoutes} do %>
       <%= image_tag('strava-square.png', :alt => 'Connect to Strava') %>
     <% end %>
   </div>

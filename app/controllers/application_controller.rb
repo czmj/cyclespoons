@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       access_information = Strava::Api::V3::Auth.retrieve_access(ENV['STRAVA_CLIENT_ID'], ENV['STRAVA_CLIENT_SECRET'], code)
       access_token = access_information['access_token']
       athlete_information = access_information['athlete']
+      @strava_client = Strava::Api::V3::Client.new(:access_token => access_token)
     end
   end
 

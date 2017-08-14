@@ -14,15 +14,23 @@ options: {
     if ($strava.length){
       $strava.remove();
       $(container).append($strava);
+
+      $strava.on('click', this.onClick);
     }
     else {
       L.DomUtil.create('a', 'btn btn--strava', container).setAttribute('href', 'https://www.strava.com/oauth/authorize?client_id=19372&response_type=code&redirect_uri=http://cyclespoons.herokuapp.com');
     }
     return container;
   },
-  onRemove: function (map) {
-    // when removed
-  },
+  onClick: function(event) {
+    var $target = $(event.target),
+        $link = $target.closest('.map__control--strava a'),
+        encodedRoutes = $link.attr('data-routes');
+
+    if (encodedRoutes) {
+      event.preventDefault();
+    }
+  }
 });
 
 L.control.strava = function(id, options) {

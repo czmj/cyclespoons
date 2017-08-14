@@ -19,10 +19,7 @@ options: {
       L.DomUtil.create('a', 'btn btn--github', container).setAttribute('href', 'https://github.com/czmj/cyclespoons');
     }
     return container;
-  },
-  onRemove: function (map) {
-    // when removed
-  },
+  }
 });
 
 L.control.github = function(id, options) {
