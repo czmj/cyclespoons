@@ -5,5 +5,5 @@ new L.Control.GeoSearch({
   retainZoomLevel: true
 }).addTo(map);
 
-new L.Control.Strava({}).addTo(map);
-new L.Control.GitHub({}).addTo(map);
+L.control.strava().addTo(map);
+L.control.github().addTo(map);
