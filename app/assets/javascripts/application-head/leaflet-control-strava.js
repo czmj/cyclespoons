@@ -53,7 +53,10 @@ L.Control.Strava = L.Control.extend({
         // routes are currently hidden
         else {
             this.routesLayer.clearLayers();
-            for (let encoded of encodedRoutes) {
+            var encoded;
+
+            for (var i = 0; i < encodedRoutes.length; i++) {
+                encoded = encodedRoutes[i];
 
                 var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
 
