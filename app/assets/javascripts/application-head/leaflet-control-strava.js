@@ -6,6 +6,7 @@ options: {
   initialize: function (options) {
     // constructor
     L.Util.setOptions(this, options);
+    self.routesLayer = new L.LayerGroup();
   },
   onAdd: function (map) {
     // happens after added to map
@@ -29,6 +30,31 @@ options: {
 
     if (encodedRoutes) {
       event.preventDefault();
+
+      if (map.hasLayer(self.routesLayer)){
+        map.removeLayer(self.routesLayer);
+      }
+      else {
+        encodedRoutes = JSON.parse(encodedRoutes);
+        self.routesLayer.clearLayers();
+  
+        for (let encoded of encodedRoutes) {
+          var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+            
+          var route = L.polyline(
+              coordinates,
+              {
+                  color: 'blue',
+                  weight: 5,
+                  opacity: .7,
+                  lineJoin: 'round'
+              }
+          )
+
+          self.routesLayer.addLayer(route);
+        }
+        map.addLayer(self.routesLayer);
+      }
     }
   }
 });
