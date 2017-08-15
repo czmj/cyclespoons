@@ -17,7 +17,7 @@ L.Control.Strava = L.Control.extend({
         if ($strava.length) {
             $strava.remove();
             $(container).append($strava);
-            L.DomEvent.addListener($routesToggle[0], 'click', this.toggleRoutesHandler, this)
+            $routesToggle.on('click', $.proxy(this.toggleRoutesHandler, this));
         }
 
         return container;
@@ -28,7 +28,7 @@ L.Control.Strava = L.Control.extend({
         
         // data attribute exists 
         if (encodedRoutes) {
-            L.DomEvent.preventDefault(event);
+            event.preventDefault();
             encodedRoutes = JSON.parse(encodedRoutes);
 
             if (encodedRoutes.length){
