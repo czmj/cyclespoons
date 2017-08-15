@@ -3,26 +3,25 @@ class ApplicationController < ActionController::Base
   before_action :strava_auth
 
   def strava_auth
-    code = strava_code
+    access_token = strava_token
 
-    if code
-      access_information = Strava::Api::V3::Auth.retrieve_access(ENV['STRAVA_CLIENT_ID'], ENV['STRAVA_CLIENT_SECRET'], code)
-      access_token = access_information['access_token']
-      athlete_information = access_information['athlete']
+    if access_token
       @strava_client = Strava::Api::V3::Client.new(:access_token => access_token)
     end
   end
 
   private
 
-  def strava_code
+  def strava_token
     if params[:code]
       code = params[:code]
-      cookies.permanent[:strava_code] = code
+      access_information = Strava::Api::V3::Auth.retrieve_access(ENV['STRAVA_CLIENT_ID'], ENV['STRAVA_CLIENT_SECRET'], code)
+      access_token = access_information['access_token']
+      cookies.permanent[:strava_token] = access_token
     else
-      code = cookies[:strava_code]
+      access_token = cookies[:strava_token]
     end
 
-    return code
+    return access_token
   end
 end
