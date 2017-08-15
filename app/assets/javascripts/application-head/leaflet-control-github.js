@@ -1,6 +1,6 @@
 L.Control.GitHub = L.Control.extend({
     options: {
-        position: 'topright'
+        position: 'bottomleft'
     },
     initialize: function(options) {
         // constructor

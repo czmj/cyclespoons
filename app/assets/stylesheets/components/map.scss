@@ -5,3 +5,33 @@
 .leaflet-container {
     height: 100vh;
 }
+
+.map__control--strava {
+    position: relative;
+    z-index: 1;
+
+    .fa {
+        pointer-events: none;
+    }
+
+    &:hover {
+        .map__control--strava__toggle {
+            transform: scale(1);
+        }
+    }
+}
+
+.map__control--strava__toggles {
+    position: absolute;
+    display: block;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.map__control--strava__toggle {
+    width: 35px;
+    height: 35px;
+    transition: transform 200ms ease;
+    transform: scale(0);
+}

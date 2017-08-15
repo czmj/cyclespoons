@@ -10,21 +10,21 @@ L.Control.Strava = L.Control.extend({
         // happens after added to map
         var container = L.DomUtil.create('div', 'leaflet-control-strava');
         var $strava = $('.map__control--strava');
+        var $routesToggle = $('.js-toggle-routes');
         this.routesLayer = new L.FeatureGroup();
 
         // strava button in markup
         if ($strava.length) {
             $strava.remove();
             $(container).append($strava);
-            L.DomEvent.addListener($strava[0], 'click', this.onClick, this)
+            L.DomEvent.addListener($routesToggle[0], 'click', this.toggleRoutesHandler, this)
         }
 
         return container;
     },
-    onClick: function(event) {
+    toggleRoutesHandler: function(event) {
         var $target = $(event.target),
-            $link = $target.is('.map__control--strava a') ? $target : $target.closest('.map__control--strava a'),
-            encodedRoutes = $link.attr('data-routes');
+            encodedRoutes = $target.attr('data-routes');
         
         // data attribute exists 
         if (encodedRoutes) {
@@ -33,6 +33,7 @@ L.Control.Strava = L.Control.extend({
 
             if (encodedRoutes.length){
                 this.toggleRoutes(encodedRoutes);
+                $target.toggleClass('active');
             }
             // user has no routes to show
             else {
@@ -57,7 +58,7 @@ L.Control.Strava = L.Control.extend({
                 var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
 
                 var route = L.polyline(coordinates, {
-                    color: 'blue',
+                    color: 'purple',
                     weight: 5,
                     opacity: .7,
                     lineJoin: 'round'
@@ -66,7 +67,7 @@ L.Control.Strava = L.Control.extend({
                 this.routesLayer.addLayer(route);
             }
             map.addLayer(this.routesLayer);
-            map.fitBounds(this.routesLayer.getBounds());
+            // map.fitBounds(this.routesLayer.getBounds());
         }
     }
 });

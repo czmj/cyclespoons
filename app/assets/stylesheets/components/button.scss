@@ -1,7 +1,25 @@
 .btn {
     display: inline-block;
-    max-width: 50px;
-    border: 0;
-    cursor: pointer;
+    border: 1px solid $brand-color-b;
+	margin-bottom: 0; // For input.btn
+	border-radius: 5px;
+	background: $brand-color-a;
+	color: $brand-color-b;
+	padding: 5px;
+	box-shadow: none;
+	vertical-align: top;
+	text-decoration: none;
+    text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
 
+	font-size: 20px;
+
+	-webkit-font-smoothing: antialiased; // get rid of faux bolding
+
+    &.active {
+        box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.2);
+		color: $brand-color-c;
+		border-color: $brand-color-c;
+    }
 }
