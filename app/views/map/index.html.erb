@@ -11,7 +11,7 @@
     <% end %>
   </div>
   <div class="map__control map__control--strava">
-    <% if @encodedRoutes %>
+    <% if @strava_client %>
       <%= image_tag('strava-square.png', :alt => 'Strava') %>
 
       <div class="map__control--strava__toggles">

@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
 
     if access_token
       @strava_client = Strava::Api::V3::Client.new(:access_token => access_token)
+
+      begin
+        @strava_client.list_athlete_routes
+      rescue
+        # token is invalid
+        cookies.delete[:strava_token]
+        @strava_client = nil
+      end
     end
   end
 
